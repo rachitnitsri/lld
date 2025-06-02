@@ -64,6 +64,7 @@ class GameBoard:
     def __init__(self, size=3):
         self.size = size
         self.board = [[' ' for _ in range(size)] for _ in range(size)]
+        self.moves_count = 0
 
     def display(self):
         for row in self.board:
@@ -109,7 +110,6 @@ class Games:
 
 class TicTacToeGame(Games):
     def __init__(self):
-        super().__init__()
         self.board = GameBoard()
         self.player1 = PlayerFactory.create_player("human", "Player 1", "X")
         self.player2 = PlayerFactory.create_player("human", "Player 2", "O")
